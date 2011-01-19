@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script type='text/javascript'>
+      function calc(operation){
+        var L = parseFloat(document.all.theform.principle.value);
+        var R = parseFloat(document.all.theform.yearlyRate.value)/1200;
+        var N = parseFloat(document.all.theform.totalYears.value)*12;
+        var total = (L * R)/(1 - Math.pow(1/(1 + R), N));
+        document.all.theform.result.value = total
+      }
+    </script>
+  </head>
+  <body>
+
+    <form name='theform' style='width: 500px; text-align: left; margin: 50px auto;'>
+
+      <label style='display: inline-block; width: 130px'> Loan Amount </label>
+      <input type='text' name='principle'/>
+      <br/>
+      <label style='display: inline-block; width: 130px'> Yearly Interest Rate </label>
+      <input type='text' name='yearlyRate'/>
+      <br/>
+      <label style='display: inline-block; width: 130px'> Number of Years</label>
+      <input type='text' name='totalYears'/>
+      <br/>
+      <br/>
+      <input style='width: 108px;' type='button' name='cupcakes' value='Calculate Result' onClick='calc();'/>
+      
+      <input type='text' style='width:150px' name='result'/>
+      <br/>      
+    </form>
+  </body>
+</html>
