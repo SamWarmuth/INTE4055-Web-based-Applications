@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script type='text/javascript'>
+      function add(){
+        var num1 = parseFloat(document.all.theform.num1.value);
+        var num2 = parseFloat(document.all.theform.num2.value);
+        document.all.theform.result.value = num1 + num2;
+        
+      }
+      
+      function multiply(){
+        var num1 = parseFloat(document.all.theform.num1.value);
+        var num2 = parseFloat(document.all.theform.num2.value);
+        
+        document.all.theform.result.value = num1 * num2;
+        
+      }
+      function getTotal(){
+      }
+      function resetCount(){
+        red = 0;
+        blue = 0;
+        document.all.theform.num1.value = "";
+        document.all.theform.num2.value = "";
+        document.all.theform.result.value = "";
+      }
+    </script>
+  </head>
+  <body>
+
+    <form name='theform' style='width: 500px; text-align: left; margin: 50px auto;'>
+
+      Enter a number in each field
+      <input type='text' name='num1'/>
+      <input type='text' name='num2'/>
+      <br/>
+      <input type='button' name='cupcakes' value='+' onClick='add();'/>
+      <input type='button' name='cupcakes' value='*' onClick='multiply();'/>
+      <br/>
+      <input type='button' name='cupcakes' value='Reset Form' onClick='resetCount();'/>
+      
+      
+      <br/>
+      <input type='text' name='result'>
+      <br/>      
+    </form>
+  </body>
+</html>
