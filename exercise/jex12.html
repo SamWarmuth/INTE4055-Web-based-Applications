@@ -1,0 +1,50 @@
+<html>
+<head>
+  <script language=JavaScript>
+  // declare array
+  var myPic=new Array();
+
+  //declare image objects for each array
+  for (i=0; i<4;i++) {
+  	myPic[i]=new Image();
+  }
+
+  // preload the pictures
+  myPic[0].src="pic/create.gif"
+  myPic[1].src="pic/impact.gif"
+  myPic[2].src="pic/belong.gif"
+  myPic[3].src="pic/succeed.gif"
+  
+  function changeCreate() {
+     document.images[0].src=myPic[0].src;
+  }
+
+  function changeImpact() {
+     document.images[0].src=myPic[1].src;
+  }
+
+  function changeBelong() {
+     document.images[0].src=myPic[2].src;
+  }
+
+  function changeSucceed() {
+     document.images[0].src=myPic[3].src;
+  }
+  
+  function disFirst() {
+    document.images[0].src=myPic[Math.floor(Math.random()*4)].src;
+  }
+  </script>
+</head>
+<body onLoad="disFirst();">
+  <img src="">
+  <form>
+  <input type=button value="Change Random" onclick="changeCreate()">
+  <input type=button value="Rotate Random" onclick="changeImpact()">
+  <input type=button value="Rotate Stop" onclick="changeBelong()">
+
+  </form>
+  
+</body>
+
+</html>
