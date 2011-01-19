@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <script type='text/javascript'>
+      function updateBackground(method){
+        if (method == "button"){
+          var i = document.all.theform.buttonMenu.selectedIndex;
+          document.bgColor=document.all.theform.buttonMenu.options[i].value;
+        } else{
+          var i = document.all.secondform.autoMenu.selectedIndex;
+          document.bgColor=document.all.secondform.autoMenu.options[i].value;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name='theform' style='width: 500px; text-align: left; margin: 50px auto;'>
+      <p>Make a color selection from the menu below and click the button.</p>
+      <select name='buttonMenu'>
+        <option value="#777777">flint</option>
+        <option value="#7465DC">violet dusk</option>
+        <option value="#2F8B20">clover</option>
+        <option value="#DA456B">carnation</option>
+        <option value="#FFCCCC">subtle pink</option>
+      </select>
+      <input type='button' value="change!" onClick="updateBackground('button')">
+    </form>
+    <form name='secondform' style='width: 500px; text-align: left; margin: 50px auto;'>
+      <select name='autoMenu' onChange="updateBackground('auto')">
+        <option value="#777777">flint</option>
+        <option value="#7465DC">violet dusk</option>
+        <option value="#2F8B20">clover</option>
+        <option value="#DA456B">carnation</option>
+        <option value="#FFCCCC">subtle pink</option>
+      </select>
+    </form>
+  </body>
+</html>
