@@ -1,0 +1,32 @@
+div {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  border: 10px solid #CA0;
+  border-top-width: 20px;
+  border-bottom-width: 20px;
+  color: #CA0;
+  padding: 5px;
+  background-color: #00A;
+}
+.box1 {
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100px;
+}
+
+.box2 {
+  left: 200px;
+  top: 100px;
+  width: 300px;
+  height: 150px;
+}
+
+.box3 {
+  left: 500px;
+  top: 250px;
+  width: 400px;
+  height: 200px;
+}
