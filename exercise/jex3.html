@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script type='text/javascript'>
+    
+      function displayMyMessage1(){
+        document.all.theform.result.value = "You clicked on button A.";
+      }
+      function displayMyMessage2(){
+        document.all.theform.result.value = "You clicked on button B.";
+      }
+      function resetMyMessage(){
+        document.all.theform.result.value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <h1 style='text-align: center; margin-top: 50px;'>Do you like cupcakes?</h1>
+    <form name='theform' style='width: 500px; text-align: center; margin: auto;'>
+      <input type='button' name='cupcakes' value='A' onClick='displayMyMessage1();'>
+      <input type='button' name='cupcakes' value='B' onClick='displayMyMessage2();'>
+      <input type='button' name='cupcakes' value='Reset' onClick='resetMyMessage();'>
+      
+      <br/>
+      <textarea name='result' style='text-align: center; font-size: 1.5em;width: 460px; height: 105px'></textarea>
+    </form>
+  </body>
+</html>
