@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <style type="text/css">
+      input[type=button] {width: 240px; font-size: 2em;}
+    </style>
+    <script type='text/javascript'>
+      var cell;
+      var state = 0;
+      function flip(cell){
+        if (cell.value != " "){
+          alert("This button already clicked!");
+        } else{
+          cell.value = (state++ % 2 == 0) ? "POP" : "TART";
+        }
+      }
+      function resetButtons(){
+        with (document.all.theform){
+          A.value = " ";
+          B.value = " ";
+          C.value = " ";
+          D.value = " ";
+          E.value = " ";
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+
+    <form name='theform' style='width: 500px; text-align: left; margin: 50px auto;'>
+      <input type='button' name='A' value=' ' onClick='flip(this);'/>
+      <input type='button' name='B' value=' ' onClick='flip(this);'/>
+      <input type='button' name='C' value=' ' onClick='flip(this);'/>
+      <input type='button' name='D' value=' ' onClick='flip(this);'/>
+      <input type='button' name='E' value=' ' onClick='flip(this);'/>
+      <br/><br/><br/>
+      <input type='button' name='reset' value='RESET' onClick='resetButtons();'/>
+      
+      
+    </form>
+  </body>
+</html>
