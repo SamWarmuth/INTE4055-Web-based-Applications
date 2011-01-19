@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script type='text/javascript'>
+      function calc(operation){
+        if (document.all.theform.num1.value == "") {
+          alert ("You need to have a value in the first box");
+        } else if (document.all.theform.num2.value == "") {
+          alert ("You need to have a value in the second box");
+        } else {
+          var num1 = parseFloat(document.all.theform.num1.value);
+          var num2 = parseFloat(document.all.theform.num2.value);
+          var total;
+          if (operation == "add"){
+            total = num1 + num2;
+          }else{
+            total = num1 * num2;
+          }
+          document.all.theform.result.value = total
+        }
+        
+      }
+
+      function resetCount(){
+        document.all.theform.num1.value = "";
+        document.all.theform.num2.value = "";
+        document.all.theform.result.value = "";
+      }
+    </script>
+  </head>
+  <body>
+
+    <form name='theform' style='width: 500px; text-align: left; margin: 50px auto;'>
+
+      Enter a number in each field
+      <input type='text' name='num1'/>
+      <input type='text' name='num2'/>
+      <br/>
+      <input type='button' name='cupcakes' value='+' onClick='calc("add");'/>
+      <input type='button' name='cupcakes' value='*' onClick='calc("mult");'/>
+      <br/>
+      <input type='button' name='cupcakes' value='Reset Form' onClick='resetCount();'/>
+      
+      
+      <br/>
+      <input type='text' name='result'>
+      <br/>      
+    </form>
+  </body>
+</html>
