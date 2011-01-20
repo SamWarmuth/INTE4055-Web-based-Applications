@@ -1,0 +1,63 @@
+<html>
+<head>
+  <script language=JavaScript>
+  // declare array
+  var myPic = new Array();
+  var interval = new Array();
+  var currentIndex = 0;
+
+  //declare image objects for each array
+  for (i=0; i<4;i++) {
+  	myPic[i]=new Image();
+  }
+
+  // preload the pictures
+  myPic[0].src="pic/create.gif"
+  myPic[1].src="pic/impact.gif"
+  myPic[2].src="pic/belong.gif"
+  myPic[3].src="pic/succeed.gif"
+  
+  function startSlots(){
+    startInterval(0);
+    startInterval(1);
+    startInterval(2);
+    
+  }
+  function stopTumbler(){
+    stopInterval(currentIndex);
+    currentIndex++;
+    if (currentIndex == 3) checkWin();
+  }
+  
+  function startInterval(picIndex) {
+     interval[picIndex] = setInterval('randomChoice('+picIndex+')', 200);
+     currentIndex = 0;
+  }
+  
+  function stopInterval(picIndex){
+    clearInterval(interval[picIndex]);
+  }
+
+  
+  function randomChoice(picIndex) {
+    document.images[picIndex].src=myPic[Math.floor(Math.random()*4)].src;
+  }
+  
+  function checkWin(){
+    with (document)
+      if (images[0].src == images[1].src && images[1].src == images[2].src) alert("You win!");
+  }
+  </script>
+</head>
+<body onLoad="randomChoice(0);randomChoice(1);randomChoice(2);">
+  <img width=124 height=126 src="">
+  <img width=124 height=126 src="">
+  <img width=124 height=126 src="">
+  <form>
+    <input type=button value="Rotate Random" onclick="startSlots()">
+    <input type=button value="Rotate Stop" onclick="stopTumbler()">
+  </form>
+  
+</body>
+
+</html>
