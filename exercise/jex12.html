@@ -3,6 +3,7 @@
   <script language=JavaScript>
   // declare array
   var myPic=new Array();
+  var interval;
 
   //declare image objects for each array
   for (i=0; i<4;i++) {
@@ -15,33 +16,26 @@
   myPic[2].src="pic/belong.gif"
   myPic[3].src="pic/succeed.gif"
   
-  function changeCreate() {
-     document.images[0].src=myPic[0].src;
-  }
-
-  function changeImpact() {
-     document.images[0].src=myPic[1].src;
-  }
-
-  function changeBelong() {
-     document.images[0].src=myPic[2].src;
-  }
-
-  function changeSucceed() {
-     document.images[0].src=myPic[3].src;
+  function startInterval() {
+     interval = setInterval('randomChoice()', 500);
   }
   
-  function disFirst() {
+  function stopInterval(){
+    clearInterval(interval)
+  }
+
+  
+  function randomChoice() {
     document.images[0].src=myPic[Math.floor(Math.random()*4)].src;
   }
   </script>
 </head>
-<body onLoad="disFirst();">
+<body onLoad="randomChoice();">
   <img src="">
   <form>
-  <input type=button value="Change Random" onclick="changeCreate()">
-  <input type=button value="Rotate Random" onclick="changeImpact()">
-  <input type=button value="Rotate Stop" onclick="changeBelong()">
+  <input type=button value="Change Random" onclick="randomChoice()">
+  <input type=button value="Rotate Random" onclick="startInterval()">
+  <input type=button value="Rotate Stop" onclick="stopInterval()">
 
   </form>
   
