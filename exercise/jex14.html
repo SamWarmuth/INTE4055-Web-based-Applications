@@ -1,0 +1,53 @@
+<html>
+<head>
+  <style type="text/css">
+    input.time {
+      width: 150px;
+      font-size: 2em;
+      background-color: #800;
+      color: white;
+      font-family: "Stencil", monospace;
+      padding: 2px;
+    }
+  </style>
+  <script language=JavaScript>
+  // declare array
+  var myPic=new Array();
+  var interval;
+
+  
+  function startClock() {
+     interval = setInterval('setTime()', 500);
+  }
+  
+  function stopClock(){
+    clearInterval(interval)
+  }
+
+  
+  function setTime() {
+    var time = new Date();
+    hrs = time.getHours();
+    if (hrs < 10) hrs = "0" + hrs
+    mins = time.getMinutes();
+    if (mins < 10) mins = "0" + mins
+    seconds = time.getSeconds();
+    if (seconds < 10) seconds = "0" + seconds
+    
+    document.all.theform.time.value = hrs + ":" + mins + ":" + seconds;
+  }
+  </script>
+</head>
+<body onLoad="setTime()">
+  <form name="theform">
+  <input class='time' name='time' type='text' value='time'>
+  <br/>
+  <input type=button value="Update Time" onclick="setTime()">
+  <input type=button value="Start Clock" onclick="startClock()">
+  <input type=button value="Stop Clock" onclick="stopClock()">
+
+  </form>
+  
+</body>
+
+</html>
